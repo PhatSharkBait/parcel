@@ -271,21 +271,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 223835789}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ada10671317745e49aac26928b307f64, type: 3}
+  m_Script: {fileID: 11500000, guid: 8e2a88bf97ba4b643929ed3076205907, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   triggerEnterEvent:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 11400000, guid: c49b2996c28342a49b399e091519bb08, type: 2}
-        m_TargetAssemblyTypeName: FloatData, Assembly-CSharp
-        m_MethodName: updateValue
-        m_Mode: 4
+        m_TargetAssemblyTypeName: IntDataSO, Assembly-CSharp
+        m_MethodName: UpdateValueByAmount
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: -420
+          m_IntArgument: 20
+          m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
@@ -476,21 +476,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 782038461}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ada10671317745e49aac26928b307f64, type: 3}
+  m_Script: {fileID: 11500000, guid: 8e2a88bf97ba4b643929ed3076205907, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   triggerEnterEvent:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 11400000, guid: c49b2996c28342a49b399e091519bb08, type: 2}
-        m_TargetAssemblyTypeName: FloatData, Assembly-CSharp
-        m_MethodName: updateValue
-        m_Mode: 4
+        m_TargetAssemblyTypeName: IntDataSO, Assembly-CSharp
+        m_MethodName: SetValue
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 69
+          m_IntArgument: 10
+          m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
@@ -913,11 +913,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 2036392910}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0fb2e42789c6ebb448db9c9db76a7fd9, type: 3}
+  m_Script: {fileID: 11500000, guid: 33c2516fd9e66154bbc6a341b7bed627, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   label: {fileID: 2036392913}
-  floatDataObj: {fileID: 11400000, guid: c49b2996c28342a49b399e091519bb08, type: 2}
+  intDataSo: {fileID: 11400000, guid: c49b2996c28342a49b399e091519bb08, type: 2}
 --- !u!114 &2036392913
 MonoBehaviour:
   m_ObjectHideFlags: 0

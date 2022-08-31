@@ -20,6 +20,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="878ec686-c549-4a13-8cb3-9367745227c0" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/unityTools/Vector3DataSO.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/unityTools/Vector3DataSO.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.parcelProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.parcelProject/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SOs/Health.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SOs/Health.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MatchingGame.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MatchingGame.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FloatData.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FloatData.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TextLabelBehaviour.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TextLabelBehaviour.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TriggerEventBehaviour.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TriggerEventBehaviour.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/unityTools/FloatData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/unityTools/FloatDataSO.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/unityTools/FloatData.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/unityTools/FloatDataSO.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/unityTools/IntDataSO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/unityTools/IntDataSO.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/unityTools/TextLabelBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/unityTools/TextLabelBehaviour.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/RiderScriptEditorPersistedState.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/RiderScriptEditorPersistedState.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -28,11 +44,10 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/Assets/unityTools" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/TriggerEventBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/FloatData.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/unityTools/FloatDataSO.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -40,6 +55,11 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/TriggerEventBehaviour.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/FloatData.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/TextLabelBehaviour.cs" />
+        <option value="$PROJECT_DIR$/Assets/unityTools/FloatData.cs" />
+        <option value="$PROJECT_DIR$/Assets/unityTools/IntDataSO.cs" />
+        <option value="$PROJECT_DIR$/Assets/unityTools/FloatDataSO.cs" />
+        <option value="$PROJECT_DIR$/Assets/unityTools/TextLabelBehaviour.cs" />
+        <option value="$PROJECT_DIR$/Assets/unityTools/Vector3DataSO.cs" />
       </list>
     </option>
   </component>
@@ -86,7 +106,7 @@
       <updated>1661914859604</updated>
       <workItem from="1661914864367" duration="4000" />
       <workItem from="1661915316007" duration="2133000" />
-      <workItem from="1661977292740" duration="398000" />
+      <workItem from="1661977292740" duration="2754000" />
     </task>
     <servers />
   </component>
@@ -111,6 +131,10 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="1658" y="483" key="Rider.ProjectTemplateDialog.Size" timestamp="1661979218768">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state x="1658" y="483" key="Rider.ProjectTemplateDialog.Size/3440.0.1920.1040/5360.0.1920.1040/0.0.3440.1400@0.0.3440.1400" timestamp="1661979218768" />
     <state x="1914" y="288" key="SettingsEditor" timestamp="1661915722727">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
