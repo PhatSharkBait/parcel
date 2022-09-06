@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98c26287a26018a42bcb76b0ec0d0715, type: 3}
+  m_Name: DotInstancePositionList
+  m_EditorClassIdentifier: 
+  vector3DataSos:
+  - {fileID: 11400000, guid: 3e700da1e62220641941bc2a806538bd, type: 2}
+  - {fileID: 11400000, guid: 784004af48e820c4aa0fafe314079189, type: 2}
+  - {fileID: 11400000, guid: d9c6b65c8ccd8494991e82de717341ba, type: 2}
+  - {fileID: 11400000, guid: cd2cb87bbfebda146850ee2a45efcd46, type: 2}
+  - {fileID: 11400000, guid: 2aa61c274ed96cf4ca0587d36a2c6e02, type: 2}

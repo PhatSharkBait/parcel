@@ -65,12 +65,36 @@ MonoBehaviour:
   repeatUntilFalseEvent:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 11400000, guid: f995da8373582284fa5132f0b520f358, type: 2}
+        m_TargetAssemblyTypeName: ColorIDDataList, Assembly-CSharp
+        m_MethodName: SetColorIDRandom
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 11400000, guid: 73d7921b3e456cf40aa8b84c6865f2c9, type: 2}
         m_TargetAssemblyTypeName: Instancing, Assembly-CSharp
         m_MethodName: CreateInstanceRandomFromList
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 11400000, guid: af38bd005c743b24385fe7a309f7d43a, type: 2}
+          m_ObjectArgumentAssemblyTypeName: Vector3DataListSO, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: ca03fdb66e693684383b1cc2356e4c4f, type: 2}
+        m_TargetAssemblyTypeName: Instancing, Assembly-CSharp
+        m_MethodName: CreateInstanceRandomFromList
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: c4e17a67b9f405e43bdce88dc011c374, type: 2}
           m_ObjectArgumentAssemblyTypeName: Vector3DataListSO, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0

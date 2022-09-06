@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 98c26287a26018a42bcb76b0ec0d0715, type: 3}
-  m_Name: InstancePositionList
+  m_Name: RingInstancePositionList
   m_EditorClassIdentifier: 
   vector3DataSos:
   - {fileID: 11400000, guid: 1df973285d0659c48be43270cbf3df4c, type: 2}
-  - {fileID: 11400000, guid: 62d9b4a54c2b6c54ab3f1d51002ca55d, type: 2}
-  - {fileID: 11400000, guid: a9a7b8248c2d4cf49a1e656d3724816e, type: 2}
-  - {fileID: 11400000, guid: 645b28d9e4b1f6e49b9668fc0baa179d, type: 2}
-  - {fileID: 11400000, guid: bb24a82a26b708d4f8bef13e1b9f2a71, type: 2}
+  - {fileID: 11400000, guid: 022be8477dab9964d91cf43fcc728c98, type: 2}
+  - {fileID: 11400000, guid: 048742eed289654498582f216bdf458c, type: 2}
+  - {fileID: 11400000, guid: 606709942296dc5449e5bc59e97b07c4, type: 2}
+  - {fileID: 11400000, guid: dd2469612cd35884f96b7e7099dd9501, type: 2}
