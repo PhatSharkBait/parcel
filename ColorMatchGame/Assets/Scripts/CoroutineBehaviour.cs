@@ -3,12 +3,18 @@ using UnityEngine;
 using UnityEngine.Events;
 
 public class CoroutineBehaviour : MonoBehaviour {
-    public bool canRun;
+    private bool canRun;
     public float repeatTime, delayTime, countDownTime = 1.0f;
     public IntDataSO counterDown;
     public UnityEvent delayEvent, beginRepeatEvent, repeatEvent, endRepeatEvent, repeatUntilFalseEvent;
 
     private WaitForSeconds _waitForSecondsDelay, _waitForSecondsCountDown, _waitForSecondsUntilFalse;
+
+    public bool CanRun
+    {
+        get => canRun;
+        set => canRun = value;
+    }
 
     private void Awake() {
         _waitForSecondsDelay = new WaitForSeconds(delayTime);
@@ -32,7 +38,7 @@ public class CoroutineBehaviour : MonoBehaviour {
     }
 
     private IEnumerator RepeatUntilFalse() {
-        while (canRun) {
+        while (CanRun) {
             repeatUntilFalseEvent.Invoke();
             yield return _waitForSecondsUntilFalse;
         }
@@ -46,7 +52,8 @@ public class CoroutineBehaviour : MonoBehaviour {
         StartCoroutine(BeginCountdown());
     }
     public void BeginRepeatUntilFalseCoroutine() {
+        canRun = true;
         StartCoroutine(RepeatUntilFalse());
     }
-
+    
 }
