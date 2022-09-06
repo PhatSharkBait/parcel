@@ -376,6 +376,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1752883541}
+        m_TargetAssemblyTypeName: CoroutineBehaviour, Assembly-CSharp
+        m_MethodName: set_CanRun
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1752883541}
+        m_TargetAssemblyTypeName: CoroutineBehaviour, Assembly-CSharp
+        m_MethodName: BeginRepeatUntilFalseCoroutine
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &166738392
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1711,10 +1735,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Instancer
       objectReference: {fileID: 0}
-    - target: {fileID: 2156726503659481715, guid: f613c4dd0cad9bf4aa95e1b506db9407, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2156726503659481716, guid: f613c4dd0cad9bf4aa95e1b506db9407, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -1759,10 +1779,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2156726503659481717, guid: f613c4dd0cad9bf4aa95e1b506db9407, type: 3}
-      propertyPath: repeatTime
-      value: 1.75
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f613c4dd0cad9bf4aa95e1b506db9407, type: 3}
 --- !u!1 &1752883539 stripped
@@ -1781,34 +1797,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42a0a19573994f8459f333e612c6faa5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1752883543
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1752883539}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 98455bed2471de24f90b05a0e9cc323d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameActionObject: {fileID: 11400000, guid: 781d043134237af43b900ba1d6f3bddb, type: 2}
-  respondEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1752883541}
-        m_TargetAssemblyTypeName: CoroutineBehaviour, Assembly-CSharp
-        m_MethodName: set_CanRun
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &1859098550
 GameObject:
   m_ObjectHideFlags: 0

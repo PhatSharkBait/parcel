@@ -11,13 +11,14 @@ GameObject:
   - component: {fileID: 2156726503659481716}
   - component: {fileID: 2156726503659481717}
   - component: {fileID: 2156726503659481714}
+  - component: {fileID: 1752883543}
   m_Layer: 0
   m_Name: Instancer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2156726503659481716
 Transform:
   m_ObjectHideFlags: 0
@@ -45,8 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42a0a19573994f8459f333e612c6faa5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canRun: 1
-  repeatTime: 1
+  repeatTime: 1.75
   delayTime: 0
   countDownTime: 1
   counterDown: {fileID: 0}
@@ -134,3 +134,31 @@ MonoBehaviour:
   disableEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1752883543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2156726503659481715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98455bed2471de24f90b05a0e9cc323d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameActionObject: {fileID: 11400000, guid: 781d043134237af43b900ba1d6f3bddb, type: 2}
+  respondEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2156726503659481717}
+        m_TargetAssemblyTypeName: CoroutineBehaviour, Assembly-CSharp
+        m_MethodName: set_CanRun
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
