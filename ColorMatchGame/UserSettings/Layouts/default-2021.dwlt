@@ -340,14 +340,14 @@ MonoBehaviour:
     - {fileID: 3858580843286468819, guid: 973fce6ba1f564641ab596d6a6566d78, type: 2}
     - {fileID: 8021159967059366291, guid: 884b089564ff35749b958032157f791f, type: 2}
     m_ValueSerializationHelper:
-    - e00: 1
+    - e00: 0.83087504
       e01: 0
       e02: 0
-      e03: 54.5
+      e03: 59.029053
       e10: 0
-      e11: 1
+      e11: 0.83087504
       e12: 0
-      e13: 185
+      e13: 132.94
       e20: 0
       e21: 0
       e22: 1
@@ -356,14 +356,14 @@ MonoBehaviour:
       e31: 0
       e32: 0
       e33: 1
-    - e00: 1
+    - e00: 0.5431579
       e01: 0
       e02: 0
-      e03: 54.5
+      e03: -12.157898
       e10: 0
-      e11: 1
+      e11: 0.5431579
       e12: 0
-      e13: 110
+      e13: 88.4
       e20: 0
       e21: 0
       e22: 1
@@ -551,11 +551,11 @@ MonoBehaviour:
   m_ObjectsLockedBeforeSerialization: []
   m_InstanceIDsLockedBeforeSerialization: 
   m_PreviewResizer:
-    m_CachedPref: -160
+    m_CachedPref: 339
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
   m_LastInspectedObjectInstanceID: -1
-  m_LastVerticalScrollValue: 0
+  m_LastVerticalScrollValue: 809
   m_GlobalObjectId: 
   m_InspectorMode: 0
   m_LockTracker:
@@ -903,9 +903,9 @@ MonoBehaviour:
       floating: 0
       collapsed: 0
       displayed: 1
-      snapOffset: {x: 67.5, y: 86}
+      snapOffset: {x: 67.5, y: -208}
       snapOffsetDelta: {x: 0, y: 0}
-      snapCorner: 0
+      snapCorner: 2
       id: Orientation
       index: 0
       layout: 4
@@ -1024,7 +1024,7 @@ MonoBehaviour:
       floating: 0
       collapsed: 0
       displayed: 0
-      snapOffset: {x: 0, y: 0}
+      snapOffset: {x: 0, y: 25}
       snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 0
       id: Scene View/Particles
@@ -1035,7 +1035,7 @@ MonoBehaviour:
   m_OverrideSceneCullingMask: 6917529027641081856
   m_SceneIsLit: 1
   m_SceneLighting: 1
-  m_2DMode: 1
+  m_2DMode: 0
   m_isRotationLocked: 0
   m_PlayAudio: 0
   m_AudioPlay: 0
@@ -1071,15 +1071,15 @@ MonoBehaviour:
       m_Size: {x: 0, y: 0}
     yGrid:
       m_Fade:
-        m_Target: 0
+        m_Target: 1
         speed: 2
-        m_Value: 0
+        m_Value: 1
       m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 0.4}
       m_Pivot: {x: 0, y: 0, z: 0}
-      m_Size: {x: 0, y: 0}
+      m_Size: {x: 1, y: 1}
     zGrid:
       m_Fade:
-        m_Target: 1
+        m_Target: 0
         speed: 2
         m_Value: 1
       m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 0.4}
@@ -1089,7 +1089,7 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0, y: 0, z: 0, w: 1}
+    m_Target: {x: -0.16077322, y: 0.75619346, z: -0.20222437, w: -0.6011913}
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
@@ -1097,9 +1097,9 @@ MonoBehaviour:
     speed: 2
     m_Value: 7.993144
   m_Ortho:
-    m_Target: 1
+    m_Target: 0
     speed: 2
-    m_Value: 1
+    m_Value: 0
   m_CameraSettings:
     m_Speed: 1
     m_SpeedNormalized: 0.5
@@ -1113,7 +1113,7 @@ MonoBehaviour:
     m_FarClip: 10000
     m_DynamicClip: 1
     m_OcclusionCulling: 0
-  m_LastSceneViewRotation: {x: -0.08717229, y: 0.89959055, z: -0.21045254, w: -0.3726226}
+  m_LastSceneViewRotation: {x: -0.16077322, y: 0.75619346, z: -0.20222437, w: -0.6011913}
   m_LastSceneViewOrtho: 0
   m_ReplacementShader: {fileID: 0}
   m_ReplacementString: 
