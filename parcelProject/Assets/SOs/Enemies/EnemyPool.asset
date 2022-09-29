@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5f2d1dec714c0540af18267b8262c38, type: 3}
   m_Name: EnemyPool
   m_EditorClassIdentifier: 
-  enemyType: {fileID: 11400000, guid: bab291835e7d78541a0c7a9d2543c576, type: 2}
+  enemyType: {fileID: 11400000, guid: 5d1b3e4efa9bcc140aedbe994417a95d, type: 2}
   pool:
   - {fileID: 0}
   - {fileID: 0}
