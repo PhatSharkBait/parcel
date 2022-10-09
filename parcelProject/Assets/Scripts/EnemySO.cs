@@ -3,5 +3,5 @@ using UnityEngine;
 public class EnemySO : ScriptableObject {
     public Material material;
     public int damage;
-    public int moveSpeed;
+    public float moveSpeed;
 }

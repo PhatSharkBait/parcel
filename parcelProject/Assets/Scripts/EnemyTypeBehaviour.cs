@@ -16,14 +16,16 @@ public class EnemyTypeBehaviour : MonoBehaviour {
 
     private MeshRenderer _meshRenderer;
     private Rigidbody _rigidbody;
-    private WaitForSeconds _waitForSeconds;
+    private WaitForSeconds _waitForSeconds, _tickSeconds;
     private float _speed;
-    private float _damage;
+    private int _damage;
+    public bool CanDealTickDamage { get; set; }
 
     private void Awake() {
         _meshRenderer = GetComponent<MeshRenderer>();
         _rigidbody = GetComponent<Rigidbody>();
         _waitForSeconds = new WaitForSeconds(.5f);
+        _tickSeconds = new WaitForSeconds(.5f);
     }
 
     private void Start() {
@@ -66,5 +68,24 @@ public class EnemyTypeBehaviour : MonoBehaviour {
     private void Update() {
         Vector3 moveDir = (playerLocationSO.value - transform.position).normalized * (_speed * Time.deltaTime);
         transform.Translate(moveDir);
+    }
+
+    private void DealDamage(IntDataSO healthObj) {
+        healthObj.value -= _damage;
+    }
+
+    private IEnumerator DamageTick(IntDataSO healthObj) {
+        do {
+            DealDamage(healthObj);
+            yield return _tickSeconds;
+        } while (CanDealTickDamage);
+    }
+
+    public void StartDamageTick(IntDataSO healthObj) {
+        CanDealTickDamage = true;
+        StartCoroutine(DamageTick(healthObj));
+    }
+    public void StopDamageTick() {
+        CanDealTickDamage = false;
     }
 }

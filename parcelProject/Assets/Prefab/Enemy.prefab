@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 5635231872836487763}
   - component: {fileID: 6730791403833023941}
   - component: {fileID: -8940600729541558881}
+  - component: {fileID: 7877984613615705259}
   m_Layer: 7
   m_Name: Enemy
   m_TagString: Untagged
@@ -132,19 +133,19 @@ MonoBehaviour:
   enemySO: {fileID: 0}
   enemyPoolSO: {fileID: 11400000, guid: 96315d5eafcc52941bf068325119469b, type: 2}
   playerLocationSO: {fileID: 11400000, guid: 5323524304d6d8e478b677ed7673cd91, type: 2}
-  maxDistanceFromPlayer: 10
+  maxDistanceFromPlayer: 30
   outOfRangeEvent:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: -8940600729541558881}
         m_TargetAssemblyTypeName: TeleportBehaviour, Assembly-CSharp
-        m_MethodName: TeleportToVector3Data
-        m_Mode: 1
+        m_MethodName: TeleportRandomDirectionDistanceVector3Data
+        m_Mode: 4
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: 0
+          m_FloatArgument: 15
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
@@ -185,3 +186,45 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vector3DataSo: {fileID: 11400000, guid: 5323524304d6d8e478b677ed7673cd91, type: 2}
+--- !u!114 &7877984613615705259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6730791403833023934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e2a88bf97ba4b643929ed3076205907, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerEnterEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6730791403833023941}
+        m_TargetAssemblyTypeName: EnemyTypeBehaviour, Assembly-CSharp
+        m_MethodName: StartDamageTick
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: c49b2996c28342a49b399e091519bb08, type: 2}
+          m_ObjectArgumentAssemblyTypeName: unityTools.IntDataSO, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  triggerExitEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6730791403833023941}
+        m_TargetAssemblyTypeName: EnemyTypeBehaviour, Assembly-CSharp
+        m_MethodName: StopDamageTick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
