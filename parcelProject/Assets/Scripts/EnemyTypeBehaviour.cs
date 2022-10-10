@@ -66,8 +66,10 @@ public class EnemyTypeBehaviour : MonoBehaviour {
     }
 
     private void Update() {
-        Vector3 moveDir = (playerLocationSO.value - transform.position).normalized * (_speed * Time.deltaTime);
-        transform.Translate(moveDir);
+        _rigidbody.velocity = Vector3.zero;
+        var currentPos = transform.position;
+        Vector3 moveDir = (playerLocationSO.value - currentPos).normalized * (_speed * Time.deltaTime);
+        _rigidbody.position += moveDir;
     }
 
     private void DealDamage(IntDataSO healthObj) {
