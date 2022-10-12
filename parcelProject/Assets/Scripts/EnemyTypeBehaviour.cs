@@ -4,6 +4,7 @@ using UnityEngine.Events;
 using unityTools;
 using System.Collections;
 using UnityEditor;
+using UnityEngine.AI;
 
 [RequireComponent(typeof(MeshRenderer))]
 [RequireComponent(typeof(Rigidbody))]
@@ -14,6 +15,7 @@ public class EnemyTypeBehaviour : MonoBehaviour {
     public int maxDistanceFromPlayer = 5;
     public UnityEvent outOfRangeEvent;//, swapEnemy;
 
+    private NavMeshAgent _navMeshAgent;
     private MeshRenderer _meshRenderer;
     private Rigidbody _rigidbody;
     private WaitForSeconds _waitForSeconds, _tickSeconds;
@@ -22,6 +24,7 @@ public class EnemyTypeBehaviour : MonoBehaviour {
     public bool CanDealTickDamage { get; set; }
 
     private void Awake() {
+        _navMeshAgent = GetComponent<NavMeshAgent>();
         _meshRenderer = GetComponent<MeshRenderer>();
         _rigidbody = GetComponent<Rigidbody>();
         _waitForSeconds = new WaitForSeconds(.5f);
@@ -69,7 +72,7 @@ public class EnemyTypeBehaviour : MonoBehaviour {
         _rigidbody.velocity = Vector3.zero;
         var currentPos = transform.position;
         Vector3 moveDir = (playerLocationSO.value - currentPos).normalized * (_speed * Time.deltaTime);
-        _rigidbody.position += moveDir;
+        _navMeshAgent.Move(moveDir);
     }
 
     private void DealDamage(IntDataSO healthObj) {
