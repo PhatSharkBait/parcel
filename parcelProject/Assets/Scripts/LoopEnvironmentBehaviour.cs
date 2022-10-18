@@ -11,10 +11,12 @@ public class LoopEnvironmentBehaviour : MonoBehaviour {
 
     private WaitForSeconds _waitForSeconds;
     private Vector3 _currentLocation;
+    private float _centerOffset;
 
     private void Awake() {
         _waitForSeconds = new WaitForSeconds(.5f);
         _currentLocation = transform.position;
+        _centerOffset = environmentOffsetAmount / 2;
     }
 
     private IEnumerator Start() {
@@ -24,19 +26,19 @@ public class LoopEnvironmentBehaviour : MonoBehaviour {
             var xNeg = false;
             var zPos = false;
             var zNeg = false;
-            if (playerLocationObj.value.x > (_currentLocation.x + environmentOffsetAmount)) {
+            if (playerLocationObj.value.x + _centerOffset > (_currentLocation.x + environmentOffsetAmount)) {
                 xPos = true;
                 newPosition.x += environmentOffsetAmount;
             }
-            if (playerLocationObj.value.x < (_currentLocation.x - environmentOffsetAmount)) {
+            if (playerLocationObj.value.x - _centerOffset < (_currentLocation.x - environmentOffsetAmount)) {
                 xNeg = true;
                 newPosition.x -= environmentOffsetAmount;
             }
-            if (playerLocationObj.value.z > (_currentLocation.z + environmentOffsetAmount)) {
+            if (playerLocationObj.value.z + _centerOffset > (_currentLocation.z + environmentOffsetAmount)) {
                 zPos = true;
                 newPosition.z += environmentOffsetAmount;
             }
-            if (playerLocationObj.value.z < (_currentLocation.z - environmentOffsetAmount)) {
+            if (playerLocationObj.value.z - _centerOffset < (_currentLocation.z - environmentOffsetAmount)) {
                 zNeg = true;
                 newPosition.z -= environmentOffsetAmount;
             }
