@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Red
   m_EditorClassIdentifier: 
   material: {fileID: 2100000, guid: 44da6676192e58448a0b911cc2e7ba2c, type: 2}
-  damage: 1.5
+  damage: 1
+  health: 5
   moveSpeed: 3.57

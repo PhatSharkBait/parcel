@@ -13,7 +13,7 @@ public class EnemyTypeBehaviour : MonoBehaviour {
     public EnemyPoolSO enemyPoolSO;
     public Vector3DataSO playerLocationSO;
     public int maxDistanceFromPlayer = 5;
-    public UnityEvent outOfRangeEvent;//, swapEnemy;
+    public UnityEvent outOfRangeEvent, killEvent;//, swapEnemy;
 
     private NavMeshAgent _navMeshAgent;
     private MeshRenderer _meshRenderer;
@@ -21,9 +21,11 @@ public class EnemyTypeBehaviour : MonoBehaviour {
     private WaitForSeconds _waitForSeconds, _tickSeconds;
     private float _speed;
     private int _damage;
+    private int _health;
     public bool CanDealTickDamage { get; set; }
 
     private void Awake() {
+        enemySO = enemyPoolSO.enemyType;
         _navMeshAgent = GetComponent<NavMeshAgent>();
         _meshRenderer = GetComponent<MeshRenderer>();
         _rigidbody = GetComponent<Rigidbody>();
@@ -32,6 +34,7 @@ public class EnemyTypeBehaviour : MonoBehaviour {
     }
 
     private void Start() {
+        _health = enemySO.health;
         StartCheckDistanceCoroutine();
         SwapEnemy();
     }
@@ -92,5 +95,18 @@ public class EnemyTypeBehaviour : MonoBehaviour {
     }
     public void StopDamageTick() {
         CanDealTickDamage = false;
+    }
+
+    public void DealDamageToEnemy(int damageToDeal) {
+        _health -= damageToDeal;
+        if (_health <= 0) {
+            Kill();
+        }
+        print(_health);
+    }
+    private void Kill() {
+        print("dead");
+        killEvent.Invoke();
+        _health = enemySO.health;
     }
 }

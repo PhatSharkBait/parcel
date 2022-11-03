@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc97cf2c364fcdb4fbfab8ba2be83930, type: 3}
-  m_Name: Letters
+  m_Script: {fileID: 11500000, guid: 39e4285985a3479aae11bab19487e9d1, type: 3}
+  m_Name: Letter
   m_EditorClassIdentifier: 
-  obj: {fileID: 0}
+  speed: 3

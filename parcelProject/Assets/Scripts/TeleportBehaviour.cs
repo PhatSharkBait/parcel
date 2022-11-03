@@ -1,5 +1,4 @@
-﻿using System.Xml.Schema;
-using UnityEngine;
+﻿using UnityEngine;
 using unityTools;
 
 public class TeleportBehaviour : MonoBehaviour {

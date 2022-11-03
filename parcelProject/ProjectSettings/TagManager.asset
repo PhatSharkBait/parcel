@@ -14,9 +14,9 @@ TagManager:
   - Player
   - EnemyBody
   - EnemyDamage
-  - 
+  - EnemyProjectileHit
   - Interactables
-  - 
+  - Projectile
   - 
   - 
   - 
