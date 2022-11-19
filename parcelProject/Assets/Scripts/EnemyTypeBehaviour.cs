@@ -1,9 +1,7 @@
-using System;
 using UnityEngine;
 using UnityEngine.Events;
 using unityTools;
 using System.Collections;
-using UnityEditor;
 using UnityEngine.AI;
 
 [RequireComponent(typeof(MeshRenderer))]
@@ -14,14 +12,15 @@ public class EnemyTypeBehaviour : MonoBehaviour {
     public Vector3DataSO playerLocationSO;
     public int maxDistanceFromPlayer = 5;
     public UnityEvent outOfRangeEvent, killEvent;//, swapEnemy;
-
+    public GameAction dealDamage;
+    public Object prefab;
+    
     private NavMeshAgent _navMeshAgent;
     private MeshRenderer _meshRenderer;
     private Rigidbody _rigidbody;
     private WaitForSeconds _waitForSeconds, _tickSeconds;
     private float _speed;
-    private int _damage;
-    private int _health;
+    private int _damage, _health, _expValue;
     public bool CanDealTickDamage { get; set; }
 
     private void Awake() {
@@ -30,7 +29,7 @@ public class EnemyTypeBehaviour : MonoBehaviour {
         _meshRenderer = GetComponent<MeshRenderer>();
         _rigidbody = GetComponent<Rigidbody>();
         _waitForSeconds = new WaitForSeconds(.5f);
-        _tickSeconds = new WaitForSeconds(.5f);
+        _tickSeconds = new WaitForSeconds(.25f);
     }
 
     private void Start() {
@@ -50,6 +49,7 @@ public class EnemyTypeBehaviour : MonoBehaviour {
         _meshRenderer.material = enemySO.material;
         _damage = enemySO.damage;
         _speed = enemySO.moveSpeed;
+        _expValue = enemySO.expValue;
     }
     
     public void StartCheckDistanceCoroutine() {
@@ -80,6 +80,7 @@ public class EnemyTypeBehaviour : MonoBehaviour {
 
     private void DealDamage(IntDataSO healthObj) {
         healthObj.value -= _damage;
+        dealDamage.RaiseAction();
     }
 
     private IEnumerator DamageTick(IntDataSO healthObj) {
@@ -102,11 +103,17 @@ public class EnemyTypeBehaviour : MonoBehaviour {
         if (_health <= 0) {
             Kill();
         }
-        print(_health);
     }
     private void Kill() {
-        print("dead");
+        DropExp();
         killEvent.Invoke();
         _health = enemySO.health;
+    }
+
+    private void DropExp() {
+        var expInstance = Instantiate(prefab, gameObject.transform.position, Quaternion.identity) as GameObject;
+        if (expInstance == null) return;
+        var expInstanceBehaviour = expInstance.GetComponent<ExpBehaviour>();
+        expInstanceBehaviour.SetExpValue(_expValue);
     }
 }

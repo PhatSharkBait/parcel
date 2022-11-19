@@ -25,7 +25,7 @@ public class ProjectileBehaviour : MonoBehaviour {
         meshRenderer.enabled = true;
         _boxCollider.enabled = true;
         SetCanRun(true);
-        StartCoroutine(FollowEnemy());
+        StartCoroutine(MoveTowardTarget());
     }
 
     public void SetCanRun(bool value) {
@@ -36,7 +36,7 @@ public class ProjectileBehaviour : MonoBehaviour {
         target = newTarget;
     }
 
-    private IEnumerator FollowEnemy() {
+    private IEnumerator MoveTowardTarget() {
         var alpha = 0f;
         var lerpSpeed = projectileType.speed * .01f;
         var projectileStartPos = transform.position;

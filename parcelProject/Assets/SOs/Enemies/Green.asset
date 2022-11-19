@@ -15,4 +15,5 @@ MonoBehaviour:
   material: {fileID: 2100000, guid: d2c6e1dc69070ab4eb31e40dd16ede42, type: 2}
   damage: 1
   health: 3
+  expValue: 10
   moveSpeed: 6

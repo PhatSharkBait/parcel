@@ -380,6 +380,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  dealDamage: {fileID: 11400000, guid: bdd4496021e1360468a1ee214922f6d9, type: 2}
+  prefab: {fileID: 6087880226768236746, guid: faaced89c330dbf44bdc05c1910da583, type: 3}
 --- !u!114 &-8940600729541558881
 MonoBehaviour:
   m_ObjectHideFlags: 0
