@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using unityTools;
@@ -11,6 +10,7 @@ public class PlayerController : MonoBehaviour {
 
     private CharacterController _characterController;
     private Vector3 _moveDir;
+    private float _rotationValue;
     private void Awake() {
         _characterController = GetComponent<CharacterController>();
         vector3DataSo.value = gameObject.transform.position;
@@ -29,8 +29,9 @@ public class PlayerController : MonoBehaviour {
         Debug.Log("hey");
     }
     
-    private void Update() { 
+    private void Update() {
+        var position = gameObject.transform.position;
         _characterController.Move(_moveDir * Time.deltaTime);
-        vector3DataSo.value = gameObject.transform.position;
+        vector3DataSo.value = position;
     }
 }

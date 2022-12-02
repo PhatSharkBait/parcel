@@ -7,14 +7,14 @@ using UnityEngine.AI;
 [RequireComponent(typeof(MeshRenderer))]
 [RequireComponent(typeof(Rigidbody))]
 public class EnemyTypeBehaviour : MonoBehaviour {
-    public EnemySO enemySO;
-    public EnemyPoolSO enemyPoolSO;
+    public EnemyPool enemyPool;
     public Vector3DataSO playerLocationSO;
     public int maxDistanceFromPlayer = 5;
     public UnityEvent outOfRangeEvent, killEvent;//, swapEnemy;
     public GameAction dealDamage;
     public Object prefab;
-    
+
+    private EnemySO enemySO;
     private NavMeshAgent _navMeshAgent;
     private MeshRenderer _meshRenderer;
     private Rigidbody _rigidbody;
@@ -24,32 +24,31 @@ public class EnemyTypeBehaviour : MonoBehaviour {
     public bool CanDealTickDamage { get; set; }
 
     private void Awake() {
-        enemySO = enemyPoolSO.enemyType;
         _navMeshAgent = GetComponent<NavMeshAgent>();
         _meshRenderer = GetComponent<MeshRenderer>();
         _rigidbody = GetComponent<Rigidbody>();
         _waitForSeconds = new WaitForSeconds(.5f);
         _tickSeconds = new WaitForSeconds(.25f);
     }
-
-    private void Start() {
-        _health = enemySO.health;
-        StartCheckDistanceCoroutine();
+    
+    private void Start() { 
         SwapEnemy();
+        StartCheckDistanceCoroutine();
     }
 
     public void CheckEnemyType() {
-        if (enemyPoolSO.enemyType is not null && enemyPoolSO.enemyType != enemySO) {
+        if (enemyPool.enemyType is not null && enemyPool.enemyType != enemySO) {
             SwapEnemy();
         }
     }
 
     private void SwapEnemy() {
-        enemySO = enemyPoolSO.enemyType;
+        enemySO = enemyPool.enemyType;
         _meshRenderer.material = enemySO.material;
         _damage = enemySO.damage;
         _speed = enemySO.moveSpeed;
         _expValue = enemySO.expValue;
+        _health = enemySO.health;
     }
     
     public void StartCheckDistanceCoroutine() {
