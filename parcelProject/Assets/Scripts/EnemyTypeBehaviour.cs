@@ -22,6 +22,7 @@ public class EnemyTypeBehaviour : MonoBehaviour {
     private float _speed;
     private int _damage, _health, _expValue;
     public bool CanDealTickDamage { get; set; }
+    public bool CanMove { get; set; }
 
     private void Awake() {
         _navMeshAgent = GetComponent<NavMeshAgent>();
@@ -34,6 +35,7 @@ public class EnemyTypeBehaviour : MonoBehaviour {
     private void Start() { 
         SwapEnemy();
         StartCheckDistanceCoroutine();
+        CanMove = true;
     }
 
     public void CheckEnemyType() {
@@ -52,7 +54,7 @@ public class EnemyTypeBehaviour : MonoBehaviour {
     }
     
     public void StartCheckDistanceCoroutine() {
-        StartCoroutine(CheckDistance());
+       StartCoroutine(CheckDistance());
     }
 
     private IEnumerator CheckDistance() {
@@ -71,6 +73,7 @@ public class EnemyTypeBehaviour : MonoBehaviour {
     }
 
     private void Update() {
+        if (!CanMove) return;
         _rigidbody.velocity = Vector3.zero;
         var currentPos = transform.position;
         Vector3 moveDir = (playerLocationSO.value - currentPos).normalized * (_speed * Time.deltaTime);

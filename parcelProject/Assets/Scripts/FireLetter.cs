@@ -6,8 +6,10 @@ public class FireLetter : MonoBehaviour {
     public ProjectilePoolSO projectilePool;
     public PoolList enemyPoolList;
     public Vector3DataSO playerLocation;
+    public IntDataSO projectileAmount;
 
-    private List<GameObject> FindClosestEnemy(int targetAmount) {
+    private List<GameObject> FindClosestEnemy() {
+        int targetAmount = projectileAmount.value;
         if (enemyPoolList.pools.Count == 0) return null;
         List<GameObject> enemyList = enemyPoolList.pools.SelectMany(pool => pool.pool).ToList();
         var closestEnemyList = new List<GameObject>();
@@ -29,8 +31,8 @@ public class FireLetter : MonoBehaviour {
         return closestEnemyList;
     }
 
-    public void FireProjectile(int targetAmount) {
-        List<GameObject> targets = FindClosestEnemy(targetAmount);
+    public void FireProjectile() {
+        List<GameObject> targets = FindClosestEnemy();
         if (targets == null || targets.Count == 0) return;
         foreach (GameObject target in targets) {
             var projectile = projectilePool.pool[0].GetComponent<ProjectileBehaviour>();

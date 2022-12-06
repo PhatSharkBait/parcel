@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using unityTools;
 [RequireComponent(typeof(MeshRenderer))]
 public class ExpBehaviour : MonoBehaviour {
