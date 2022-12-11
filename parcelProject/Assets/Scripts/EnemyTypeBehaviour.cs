@@ -13,6 +13,7 @@ public class EnemyTypeBehaviour : MonoBehaviour {
     public UnityEvent outOfRangeEvent, killEvent;//, swapEnemy;
     public GameAction dealDamage;
     public Object prefab;
+    public IntDataSO letterDamage;
 
     private EnemySO enemySO;
     private NavMeshAgent _navMeshAgent;
@@ -100,8 +101,8 @@ public class EnemyTypeBehaviour : MonoBehaviour {
         CanDealTickDamage = false;
     }
 
-    public void DealDamageToEnemy(int damageToDeal) {
-        _health -= damageToDeal;
+    public void DealDamageToEnemy() {
+        _health -= letterDamage.value;
         if (_health <= 0) {
             Kill();
         }

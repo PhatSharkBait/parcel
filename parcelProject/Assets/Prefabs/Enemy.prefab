@@ -154,7 +154,7 @@ MonoBehaviour:
       - m_Target: {fileID: 6730791403833023941}
         m_TargetAssemblyTypeName: EnemyTypeBehaviour, Assembly-CSharp
         m_MethodName: DealDamageToEnemy
-        m_Mode: 3
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -183,6 +183,8 @@ GameObject:
   - component: {fileID: -8940600729541558881}
   - component: {fileID: 5933992309063641245}
   - component: {fileID: 1732358591302669553}
+  - component: {fileID: 3557385604579997931}
+  - component: {fileID: -2022290186248174833}
   m_Layer: 7
   m_Name: Enemy
   m_TagString: Untagged
@@ -313,7 +315,7 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: 35
+          m_FloatArgument: 30
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
@@ -352,7 +354,7 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: 20
+          m_FloatArgument: 30
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
@@ -382,6 +384,7 @@ MonoBehaviour:
         m_CallState: 2
   dealDamage: {fileID: 11400000, guid: bdd4496021e1360468a1ee214922f6d9, type: 2}
   prefab: {fileID: 6087880226768236746, guid: faaced89c330dbf44bdc05c1910da583, type: 3}
+  letterDamage: {fileID: 11400000, guid: 1b454663cc9a6e341bcdf0d69265234e, type: 2}
 --- !u!114 &-8940600729541558881
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -436,6 +439,74 @@ MonoBehaviour:
       - m_Target: {fileID: 6730791403833023941}
         m_TargetAssemblyTypeName: EnemyTypeBehaviour, Assembly-CSharp
         m_MethodName: set_CanMove
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &3557385604579997931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6730791403833023934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a6e2eb0107518341bb883fb4398d975, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameActionObject: {fileID: 11400000, guid: e32229fbdcc8d9c45a7cf312c2dfd126, type: 2}
+  respondEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6730791403833023941}
+        m_TargetAssemblyTypeName: EnemyTypeBehaviour, Assembly-CSharp
+        m_MethodName: set_CanMove
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+--- !u!114 &-2022290186248174833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6730791403833023934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a6e2eb0107518341bb883fb4398d975, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameActionObject: {fileID: 11400000, guid: 095bb1173ff5b1b459aee8763b74d70d, type: 2}
+  respondEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6730791403833023941}
+        m_TargetAssemblyTypeName: EnemyTypeBehaviour, Assembly-CSharp
+        m_MethodName: set_CanMove
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 6730791403833023941}
+        m_TargetAssemblyTypeName: EnemyTypeBehaviour, Assembly-CSharp
+        m_MethodName: set_CanDealTickDamage
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

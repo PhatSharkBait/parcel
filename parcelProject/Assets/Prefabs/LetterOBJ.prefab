@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3935292795011867550}
   - component: {fileID: 9033536378805052894}
   - component: {fileID: 8924655609682849994}
+  - component: {fileID: 2116730968241119582}
   m_Layer: 11
   m_Name: LetterOBJ
   m_TagString: Untagged
@@ -64,6 +65,7 @@ MonoBehaviour:
   target: {fileID: 0}
   meshRenderer: {fileID: 5512851829297705831}
   playerPositionData: {fileID: 11400000, guid: 5323524304d6d8e478b677ed7673cd91, type: 2}
+  _upgradeMult: {fileID: 11400000, guid: 17b7d2a8ab5064a40b61ba21528f8229, type: 2}
   canRun: 0
 --- !u!114 &8924655609682849994
 MonoBehaviour:
@@ -119,6 +121,34 @@ MonoBehaviour:
   triggerExitEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &2116730968241119582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6427446574704108412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a6e2eb0107518341bb883fb4398d975, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameActionObject: {fileID: 11400000, guid: 095bb1173ff5b1b459aee8763b74d70d, type: 2}
+  respondEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 9033536378805052894}
+        m_TargetAssemblyTypeName: ProjectileBehaviour, Assembly-CSharp
+        m_MethodName: SetCanRun
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7434246083571772250
 GameObject:
   m_ObjectHideFlags: 0

@@ -2,20 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
-using UnityEngine.Events;
 using unityTools;
 
 public class EnemySpawnHandler : MonoBehaviour {
-    //public EnemyPoolSO EnemyPoolSo;
     public PoolList enemyPoolList;
     public GameObject enemyPrefab;
     public Vector3DataSO playerLocationSO;
-    public UnityEvent startSpawningEvent, stopSpawningEvent;
     public List<EnemySO> enemyTypes;
 
     private readonly Vector3 _spawnOffset = new Vector3(50, 0, 0);
-    private List<EnemyPoolSO> _wavePool;
-    private const float SpawnDelay = .25f;
+    private const float SpawnDelay = .5f;
     private WaitForSeconds _spawnWaitForSeconds;
 
     private void Awake() {
@@ -25,21 +21,19 @@ public class EnemySpawnHandler : MonoBehaviour {
     private bool PoolFull(EnemyPool enemyPool) {
         return enemyPool.poolLength >= enemyPool.maxLength;
     }
-    public void SpawnRed() {
-        SpawnWave(enemyTypes[0], 10);
+
+    private void Start() {
+        SpawnEnemyPools();
     }
-    public void SpawnGreen() {
-        SpawnWave(enemyTypes[1], 10);
+
+    private void SpawnEnemyPools() {
+        foreach (EnemySO enemyType in enemyTypes) {
+            var newWave = new GameObject().AddComponent<EnemyPool>();
+            enemyPoolList.AddPool(newWave);
+            newWave.enemyType = enemyType;
+            newWave.maxLength = 0;
+        }
     }
-    
-    // public void InstantiateEnemyToPool(EnemyPoolSO enemyPoolSo) {
-    //     if (!PoolFull(enemyPoolSo)) {
-    //         enemyPoolSo.AddEnemyToPool(Instantiate(enemyPrefab, (playerLocationSO.value + _spawnOffset), quaternion.identity));
-    //     }
-    //     else {
-    //         StopSpawning();
-    //     }
-    // }
 
     private IEnumerator InstanceWaves(EnemyPool enemyPool) {
         while (!PoolFull(enemyPool)) {
@@ -50,20 +44,4 @@ public class EnemySpawnHandler : MonoBehaviour {
             yield return _spawnWaitForSeconds;
         }
     }
-
-    private void SpawnWave(EnemySO enemyType, int amountInWave) {
-        var newWave = new GameObject().AddComponent<EnemyPool>();
-        enemyPoolList.AddPool(newWave);
-        newWave.enemyType = enemyType;
-        newWave.maxLength = amountInWave;
-        StartCoroutine(InstanceWaves(newWave));
-    }
-
-    // public void StartSpawning() {
-    //     startSpawningEvent.Invoke();
-    // }
-    //
-    // private void StopSpawning() {
-    //     stopSpawningEvent.Invoke();
-    // }
 }

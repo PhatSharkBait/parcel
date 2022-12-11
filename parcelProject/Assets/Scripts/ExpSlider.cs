@@ -7,6 +7,7 @@ using unityTools;
 public class ExpSlider : MonoBehaviour {
     public IntDataSO currentExp, expToLevel, expBaseline;
     public TextMeshProUGUI textMeshPro;
+    public int levelMultiplier;
     
     private Slider _slider;
 
@@ -30,8 +31,9 @@ public class ExpSlider : MonoBehaviour {
         _slider.value = (currentExpValue - expBaselineValue) / (maxExpValue - expBaselineValue);
     }
 
-    public void IncreaseExperienceToLevel(int incAmount) {
-        expToLevel.value += incAmount;
+    public void IncreaseExperienceToLevel(int level) {
+        float levelFloat = level;
+        expToLevel.value = (int)(levelMultiplier*(Mathf.Pow(levelFloat, 2)));
         UpdateSlider();
     }
 }

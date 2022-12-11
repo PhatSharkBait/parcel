@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cece3461c70b964eadd3d02ba454352, type: 3}
   m_Name: MaxTimeMins
   m_EditorClassIdentifier: 
-  value: 1.5
+  value: 5

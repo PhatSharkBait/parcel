@@ -7,6 +7,7 @@ public class ProjectileBehaviour : MonoBehaviour {
     public GameObject target;
     public MeshRenderer meshRenderer;
     public Vector3DataSO playerPositionData;
+    public FloatDataSO _upgradeMult;
 
     private BoxCollider _boxCollider;
 
@@ -38,7 +39,7 @@ public class ProjectileBehaviour : MonoBehaviour {
 
     private IEnumerator MoveTowardTarget() {
         var alpha = 0f;
-        var lerpSpeed = projectileType.speed * .01f;
+        var lerpSpeed = projectileType.speed * .01f * _upgradeMult.value;
         var projectileStartPos = transform.position;
         while (canRun) {
             gameObject.transform.position = Vector3.Lerp(projectileStartPos, target.transform.position, alpha);

@@ -7,6 +7,7 @@ using unityTools;
 public class PlayerController : MonoBehaviour {
     public float speed = 6f;
     public Vector3DataSO vector3DataSo;
+    public FloatDataSO speedUpgradeMult;
 
     private CharacterController _characterController;
     private Vector3 _moveDir;
@@ -18,7 +19,7 @@ public class PlayerController : MonoBehaviour {
     
     private void OnMove(InputValue value) {
         var direction = value.Get<Vector2>();
-        _moveDir = (new Vector3(direction.x, 0, direction.y)) * speed;
+        _moveDir = (new Vector3(direction.x, 0, direction.y)) * speed * speedUpgradeMult.value;
     }
     
     private void OnFire() {
@@ -33,5 +34,9 @@ public class PlayerController : MonoBehaviour {
         var position = gameObject.transform.position;
         _characterController.Move(_moveDir * Time.deltaTime);
         vector3DataSo.value = position;
+    }
+
+    public void SetMovementToZero() {
+        _moveDir = Vector3.zero;
     }
 }
