@@ -5,7 +5,7 @@ using unityTools;
 public class ProjectileBehaviour : MonoBehaviour {
     public ProjectileSO projectileType;
     public GameObject target;
-    public MeshRenderer meshRenderer;
+    public MeshRenderer meshRenderer, meshRenderer2;
     public Vector3DataSO playerPositionData;
     public FloatDataSO _upgradeMult;
 
@@ -24,6 +24,7 @@ public class ProjectileBehaviour : MonoBehaviour {
         SetTarget(newTarget);
         transform.position = new Vector3(playerPositionData.value.x, 1f, playerPositionData.value.z);
         meshRenderer.enabled = true;
+        meshRenderer2.enabled = true;
         _boxCollider.enabled = true;
         SetCanRun(true);
         StartCoroutine(MoveTowardTarget());
