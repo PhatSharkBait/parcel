@@ -111,6 +111,9 @@ public class EnemyTypeBehaviour : MonoBehaviour {
         DropExp();
         killEvent.Invoke();
         _health = enemySO.health;
+        if (enemyPool.poolLength <= enemyPool.maxLength) return;
+        enemyPool.RemoveEnemyFromPool(gameObject);
+        Destroy(gameObject);
     }
 
     private void DropExp() {

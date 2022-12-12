@@ -21,10 +21,10 @@ public class ExpBehaviour : MonoBehaviour {
 
     private void UpdateMaterial() {
         _meshRenderer.material = _expValue switch {
-            <= 10 => materials[0],
-            <= 25 => materials[1],
-            <= 50 => materials[2],
-            <= 100 => materials[3],
+            <= 50 => materials[0],
+            <= 100 => materials[1],
+            <= 200 => materials[2],
+            <= 1000 => materials[3],
             _ => _meshRenderer.material
         };
     }

@@ -1,12 +1,13 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using unityTools;
+using TouchPhase = UnityEngine.InputSystem.TouchPhase;
 
 [RequireComponent(typeof(PlayerInput))]
 [RequireComponent(typeof(CharacterController))]
 public class PlayerController : MonoBehaviour {
     public float speed = 6f;
-    public Vector3DataSO vector3DataSo;
+    public Vector3DataSO vector3DataSo, moveDirectionSO;
     public FloatDataSO speedUpgradeMult;
 
     private CharacterController _characterController;
@@ -18,8 +19,16 @@ public class PlayerController : MonoBehaviour {
     }
     
     private void OnMove(InputValue value) {
-        var direction = value.Get<Vector2>();
-        _moveDir = (new Vector3(direction.x, 0, direction.y)) * speed * speedUpgradeMult.value;
+        var relativePosition = new Vector2((value.Get<Vector2>().x - (Screen.width/2f)),
+            (value.Get<Vector2>().y - (Screen.height/2f))).normalized;
+        moveDirectionSO.value = relativePosition;
+        _moveDir = (new Vector3(relativePosition.x, 0, relativePosition.y)) * speed * speedUpgradeMult.value;
+    }
+
+    private void OnFingerOff(InputValue value) {
+        if (value.Get<TouchPhase>() != TouchPhase.Ended) return;
+        _moveDir = Vector3.zero;
+        moveDirectionSO.value = Vector3.zero;
     }
     
     private void OnFire() {

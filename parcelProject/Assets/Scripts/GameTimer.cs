@@ -11,7 +11,6 @@ public class GameTimer : MonoBehaviour {
     public FloatDataSO amountInMinutes;
     public TimerBehaviour timerBehaviour;
     public UnityEvent timerFinishedEvent;
-    public PoolList enemyPools;
     public EnemySpawnHandler enemySpawnHandler;
     public int timeSliceInSeconds, amountOfWaves;
     
@@ -37,12 +36,11 @@ public class GameTimer : MonoBehaviour {
     private IEnumerator Timer() {
         while (_currentSecond < _targetSeconds) {
             if (!CanRun) break;
-            if (_currentSecond % timeSliceInSeconds == 0) {
-                
-            }
-
             if (_currentSecond % _secondsPerWave == 0) {
-                
+                NextWave();
+            }
+            if (_currentSecond % timeSliceInSeconds == 0) {
+                IncreaseDifficulty();
             }
             yield return _waitForSeconds;
             _currentSecond++;
@@ -55,10 +53,10 @@ public class GameTimer : MonoBehaviour {
     }
 
     private void IncreaseDifficulty() {
-        
+        enemySpawnHandler.IncreaseDifficulty();
     }
     private void NextWave() {
-        
+        enemySpawnHandler.NextWave();
     }
     
     

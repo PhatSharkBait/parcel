@@ -11,7 +11,7 @@ public class LevelUpBehaviour : MonoBehaviour {
     public ExpSlider slider;
 
     private int _projectileAmountLevel, _projectileSpeedLevel, _projectileDamageLevel, _characterSpeedLevel;
-    private int _maxLevel = 3;
+    private int _maxLevel = 5;
 
     private void Start() {
         _projectileAmountLevel = 0;
